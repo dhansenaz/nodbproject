@@ -13,7 +13,7 @@ function Header(){
         return (
         
             <div className="header">
-            <title> This is my Header</title>
+            <h1> This is my Header</h1>
             
             </div>
      );

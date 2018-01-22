@@ -13,7 +13,7 @@ function Footer(){
         return (
         
             <div className="footer">
-            <title> This is my Footer</title>
+            <h1> This is my Footer</h1>
             
             </div>
      );

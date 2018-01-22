@@ -3,5 +3,6 @@ Footer{
     background-color:grey;
     border: 1px solid black;
     width:100vw;
+    height: 50px;
     margin: 0px auto;
   }

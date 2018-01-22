@@ -1,7 +1,7 @@
 Header{
-
+    position: fixed;
     background-color:grey;
-
+    height: 50px;
     border: 1px solid black;
     width:100vw;
     margin: 0px auto;

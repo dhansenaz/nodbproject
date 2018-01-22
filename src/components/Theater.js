@@ -4,34 +4,35 @@ import "./theater.css";
 
 
 class Theater extends Component {
+
     
-componentWillMount(){
-    axios.get('/api/theater')
-    .then( (res) => {
-        this.setState({theaters:res.data})
-    })
-}
+    deleteHandler = (id) =>{
+        axios.delete('/api/theater/'+id)
+        .then(res => console.log(res))
+        
+
+    }
+  
+    
     render() {
         const title = this.props.theater.name + " - " + this.props.theater.location;
 
         const review = this.props.theater.review;
 
-        const style = {
-            backgroundImage:`url('${this.props.theater.imageUrl}')`
-        };
-
+        
 
         return (
             <div className="theater">
-                <div className="theater-picture" style={style}></div>
+                <img className="theater-picture" src = {this.props.theater.imageUrl}/>
                 <div className="theater-name"></div>
                         {title}  
                 <div className="review"></div>
                         {review}
-                          
+                        <button onClick ={() =>this.deleteHandler(this.props.theater.id)}>Delete</button>
+
                 
                 
-                
+                 
             </div>
         )
     }

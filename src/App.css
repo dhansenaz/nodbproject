@@ -8,11 +8,11 @@
   display: flex;
   flex-direction: column;background-color:rgb(147, 248, 243)
 
-
-
 }
 
-.map{
+
+
+.side{
   flex-grow: 1;
   height: 100vh;
   top: 0;

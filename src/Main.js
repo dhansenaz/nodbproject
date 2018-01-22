@@ -26,9 +26,16 @@ console.log('post button')
           
 
         })
-        
+    }
+
+  putHandler = () => {
+    axios.put("/api/theater/1")
+    .then((res) =>{
+      this.setState ({theaters:res.data})
+    })
 
   }
+        
   handleInputChange(e){
     this.setState({userInput:e} , () => console.log(this.state))
 
@@ -45,9 +52,6 @@ axios.get('/api/theater')
 
   render() {
     
-
-  
-
     const theaters = this.state.theaters.map((theater) => {
       return <Theater  theater={theater} />
     })
@@ -58,6 +62,7 @@ axios.get('/api/theater')
         <div className="main">
          <input onChange = {(e) => this.handleInputChange(e.target.value)}type="text"/>
          <button onClick = {this.postHandler}> Post Review</button>
+            <button onClick = {this.putHandler}>Change Something</button>
             <div className="theaters">
                   {theaters}
 

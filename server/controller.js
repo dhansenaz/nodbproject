@@ -1,6 +1,8 @@
+
+let inputChangeToMakeFullCrud = []
 let id = 5
 let theaters = [
-    
+
 {
         id: 1,
         name: "Harkins City Center",
@@ -56,7 +58,7 @@ module.exports = {
     },
 
 
-    update: (req, res) => {
+    review: (req, res) => {
         const {review} = req.body;
 
         var name="new theater"
@@ -66,11 +68,17 @@ module.exports = {
 
         theaters.push({review,name,id,location,imageUrl})
          res.status(200).send(theaters);
-
-        
-
     },
+    update: (req, res)=>{
+        let id = req.params.id;
 
+        let theater = theaters.find((theater)=>theater.id==id);
+        theater.name = "Updated Theater";
+        theater.location = "Updated Location";
+        theater.imageUrl="http://robohash.org/maybe?set=set4";
+
+        res.status(200).send(theaters);
+    },
 
     delete: (req, res) => {
         console.log(req.params.id)
